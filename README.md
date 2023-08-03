@@ -5,3 +5,16 @@
 - npm 8.5.4
 - node.js 16.16.0
 - phaser 3.60.0
+
+# 빌드 (확실하진 않음)
+1. root 경로에서
+```
+> npm install phaser webpack webpack-cli webpack-dev-server html-webpack-plugin --save-dev
+> npm install file-loader --save-dev 
+> npx webpack
+```
+
+2. dist 경로에서
+```
+> jar -cvf _FILENAME_.war *
+```

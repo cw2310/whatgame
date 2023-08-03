@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 // import logoImg from './assets/logo.png';
 import bgImg1 from './assets/background.png';
-import playerImg from './assets/player.png';
+// import playerImg from './assets/player.png';
+import playerImg from './assets/player_wb.png';
 
 class MyGame extends Phaser.Scene
 {
@@ -17,8 +18,10 @@ class MyGame extends Phaser.Scene
         // this.load.image('player', playerImg);
 
         this.load.spritesheet('player', playerImg, {
-            frameWidth: 32,
-            frameHeight: 36
+            // frameWidth: 32,
+            // frameHeight: 36
+            frameWidth: 64,
+            frameHeight: 96
         })
     }
       
@@ -40,21 +43,22 @@ class MyGame extends Phaser.Scene
 
         this.player = this.add.sprite(config.width/2, config.height/2, 'player');
         // this.player.setOrigin(0, 0);
-        // this.player.scale = 2;
+        this.player.scale = 1;
         // this.player.flipY = true;
         // this.player.flipX = true;
         // this.player.angle += 20;
 
         // 안내 문구
-        this.add.text(20,10,"안녕하세요^^", {
-            font: '30px 휴먼중간팸체',
+        this.add.text(10,10,"안녕하세여^^", {
+            // font: '30px 휴먼중간팸체',
+            font: '25px 마비옛체',
             fill: '#f5e99f'
         });
 
         this.anims.create({
             key: 'player_anim',
             frames: this.anims.generateFrameNumbers('player'),
-            frameRate: 12, // 초당 프레임
+            frameRate: 8, // 초당 프레임
             repeat: -1 // 반복 횟수(-1 주면 무한)
         })
 
@@ -69,7 +73,7 @@ class MyGame extends Phaser.Scene
             repeat: 0 // 반복 횟수(-1 주면 무한)
         })
 
-        this.player.play('player_anim');
+        this.player.play('player_idle');
         this.keyboardInput = this.input.keyboard.createCursorKeys();
         this.player.moving = false;
     }

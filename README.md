@@ -18,3 +18,8 @@
 ```
 > jar -cvf _FILENAME_.war *
 ```
+
+※ Github page를 통한 배포
+```
+git subtree push --prefix dist/ origin gh-pages
+```
